@@ -1,0 +1,93 @@
+.wrap {
+  background-color: white;
+}
+.menu {
+  display: flex;
+  width: 800px;
+  height: 80px;
+  flex: 1;
+  align-items: center;
+  justify-content: space-around;
+  background-color: white;
+}
+
+.item {
+  cursor: pointer;
+  color: #333;
+  position: relative;
+}
+.item:hover {
+  color: #2aae67;
+}
+.item:hover .submenu {
+  display: block;
+}
+.submenu {
+  position: absolute;
+  width: 240px;
+  left: -20px;
+  display: none;
+  transition: all 0.5s ease-in;
+}
+.dropdown {
+  padding: 12px;
+  background-color: white;
+  box-shadow: 0 0 0 #333;
+  border-radius: 8px;
+  margin-top: 34px;
+}
+.dropdownItem {
+  color: #333;
+  margin-bottom: 8px;
+}
+.dropdownItem:last-child {
+  margin-bottom: 0;
+}
+.dropdownItem:hover {
+  color: #2aae67;
+}
+.dropdownItem:hover .arrow {
+  background: gray;
+  transform: translate(1rem, 0);
+}
+.item:hover::after {
+  left: 0;
+  width: 100%;
+  opacity: 1;
+}
+.item::after {
+  content: '';
+  opacity: 0;
+  position: absolute;
+  height: 4px;
+  width: 0;
+  left: 50%;
+  right: 50%;
+  bottom: -10px;
+  background: linear-gradient(90deg, #11bb59 0%, #11c189 974.47%);
+  transition: all 0.3s;
+}
+
+.icon {
+  transition: all, 0.45s, cubic-bezier(0.65, 0, 0.076, 1);
+  position: absolute;
+  margin-top: 11px;
+  background: gray;
+}
+.arrow {
+  transition: all, 0.45s, cubic-bezier(0.65, 0, 0.076, 1);
+  width: 12px;
+  height: 2px;
+  background: none;
+}
+.arrow::before {
+  position: absolute;
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-top: 2px solid gray;
+  border-right: 2px solid gray;
+  transform: rotate(45deg);
+  margin-top: -3px;
+  margin-left: 5px;
+}

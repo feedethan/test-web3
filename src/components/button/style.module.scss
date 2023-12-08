@@ -1,0 +1,18 @@
+.button {
+  border-radius: 8px;
+  display: inline-block;
+  gap: var(--wui-spacing-xs);
+  padding: var(--wui-spacing-2xs) var(--wui-spacing-s) var(--wui-spacing-2xs)
+    var(--wui-spacing-xs);
+  border: 1px solid var(--wui-gray-glass-010);
+  background: var(--wui-color-accent-100);
+  color: var(--wui-color-fg-100);
+  cursor: pointer;
+  margin: 10px 10px 10px 0;
+  &:hover {
+    background-color: var(--wui-color-accent-090);
+  }
+  &[disabled] {
+    cursor: not-allowed;
+  }
+}
